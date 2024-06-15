@@ -1,0 +1,24 @@
+---
+import { Image } from 'astro:assets';
+import NavBar from '../components/NavBar.astro';
+import Footer from '../components/Footer.astro';
+
+import dan from '../content/dan.jpg';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+		<title>Ayman Islam</title>
+	</head>
+	<body class="bg-white">
+		<NavBar />
+		 	<Image src={dan} alt="dan" class="w-screen"/>
+		<Footer />	
+	</body>
+</html>

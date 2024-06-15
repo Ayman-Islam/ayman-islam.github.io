@@ -14,6 +14,7 @@ import SkillTag from '../components/SkillTag.astro';
 // import copper from '../content/copper.png';
 // import paradigm from '../content/paradigm.png';
 // import munstar from '../content/munstar.png';
+import solace from '../content/solace.jpg';
 import CourseCard from '../components/CourseCard.astro';
 ---
 
@@ -66,10 +67,10 @@ import CourseCard from '../components/CourseCard.astro';
 		</div>
 		<div id="experience" class="flex justify-center bg-white">
 			<div class="flex flex-col items-center py-10">
-				<div class="text-2xl font-bold">Experience & Projects</div>
+				<div class="text-2xl font-bold">Experience</div>
 				<hr class="w-16 h-1 my-4 border-0 bg-gray-500">
 				<div class="grid md:grid-cols-2 gap-20 px-20 xl:px-[20%]">
-					<ExperienceCard link="https://www.solace.ca/" title="Solace Power - Hardware, Integration, and Testing" desc="I have experience in designing, populating, testing, and debugging PCBs for wireless power transfer systems. This includes creating LC filters to reduce RF noise using Altium Designer and LTSpice, and designing current sense PCBs for overcurrent protection. I use oscilloscopes, EMI analyzers, VNAs, and impedance analyzers to enhance system efficiency. My expertise ensures robust, efficient, and reliable systems, meeting high performance and safety standards through continuous testing and debugging." date="April 2024 - present">
+					<ExperienceCard link="https://www.solace.ca/" image={solace} title="Solace Power - Hardware, Integration, and Testing" desc="I have experience in designing, populating, testing, and debugging PCBs for wireless power transfer systems. This includes creating LC filters to reduce RF noise using Altium Designer and LTSpice, and designing current sense PCBs for overcurrent protection. I use oscilloscopes, EMI analyzers, VNAs, and impedance analyzers to enhance system efficiency. My expertise ensures robust, efficient, and reliable systems, meeting high performance and safety standards through continuous testing and debugging." date="April 2024 - present">
 						<SkillTag skill="JavaScript"/>
 						<SkillTag skill="TypeScript"/>
 						<SkillTag skill="NodeJS"/>
