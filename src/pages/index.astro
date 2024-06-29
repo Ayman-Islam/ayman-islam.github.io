@@ -1,21 +1,14 @@
 ---
 import { Image } from 'astro:assets';
-import NavBar from '../components/NavBar.astro';
+import NavBar from '../components/NavBar.jsx';
 import Footer from '../components/Footer.astro';
 import ExperienceCard from '../components/ExperienceCard.astro';
-import SkillTag from '../components/SkillTag.astro';
 
-// import profile from '../content/profile.jpg';
-// import skillspass from '../content/skillspass.png';
-// import retrievium from '../content/retrievium.png';
-// import detechnologies from '../content/detechnologies.gif';
-// import fovp from '../content/fovp.png';
-// import baja from '../content/baja.png';
-// import copper from '../content/copper.png';
-// import paradigm from '../content/paradigm.png';
-// import munstar from '../content/munstar.png';
-import solace from '../content/solace.jpg';
-import CourseCard from '../components/CourseCard.astro';
+import solace from '../content/solace.png';
+import hydro from '../content/hydro.jpg';
+import trainingworks from '../content/trainingworks.png';
+import cahill from '../content/cahill.jpg';
+import verafin from '../content/verafin.png';
 ---
 
 <html lang="en">
@@ -29,12 +22,9 @@ import CourseCard from '../components/CourseCard.astro';
 		<title>Ayman Islam</title>
 	</head>
 	<body class="bg-white">
-		<NavBar />
+		<NavBar client:load />
 		<div id="home" class="flex items-center justify-center h-[40rem]">
 			<div class="max-w-[40rem] px-10">
-				<div class="text-blue-400 text-xl font-bold">
-					Hi there, my name is
-				</div>
 				<div class="text-6xl font-bold">
 					Ayman Islam
 				</div>
@@ -42,7 +32,7 @@ import CourseCard from '../components/CourseCard.astro';
 					Electrical Engineering Student
 				</div>
 				<div>
-					I'm a Computer Engineering student at Memorial University of Newfoundland with strong interest and understanding of Full-Stack and Mobile Development.<br> Previously, I've worked as a Full-Stack Developer at Bluedrop ISM and done contract work for local organizations and research groups. I have skills in Dart (Flutter), C++, C#, Java, JavaScript (ReactJS, AngularJS, and NodeJS), Python and SQL (PostgreSQL).
+					I am a senior electrical engineering student attending the Memorial University of Newfoundland, expecting to graduate in May 2026. I have a strong interest in electronics, robotics, and PCB design. I develop electronics for various student projects, personal projects, and through my professional work. 
 				</div>
 			</div>
 		</div>
@@ -70,18 +60,40 @@ import CourseCard from '../components/CourseCard.astro';
 				<div class="text-2xl font-bold">Experience</div>
 				<hr class="w-16 h-1 my-4 border-0 bg-gray-500">
 				<div class="grid md:grid-cols-2 gap-20 px-20 xl:px-[20%]">
-					<ExperienceCard link="https://www.solace.ca/" image={solace} title="Solace Power - Hardware, Integration, and Testing" desc="I have experience in designing, populating, testing, and debugging PCBs for wireless power transfer systems. This includes creating LC filters to reduce RF noise using Altium Designer and LTSpice, and designing current sense PCBs for overcurrent protection. I use oscilloscopes, EMI analyzers, VNAs, and impedance analyzers to enhance system efficiency. My expertise ensures robust, efficient, and reliable systems, meeting high performance and safety standards through continuous testing and debugging." date="April 2024 - present">
-						<SkillTag skill="JavaScript"/>
-						<SkillTag skill="TypeScript"/>
-						<SkillTag skill="NodeJS"/>
-						<SkillTag skill="REST APIs"/>
-						<SkillTag skill="ReactJS"/>
-						<SkillTag skill="AngularJS"/>
-						<SkillTag skill="PostgreSQL"/>
-						<SkillTag skill="Unit-Testing"/>
-						<SkillTag skill="Jira"/>
-						<SkillTag skill="GitHub"/>
-						<SkillTag skill="Agile Development"/>
+					<ExperienceCard 
+						link="https://www.solace.ca/" 
+						image={solace} title="Solace Power - Hardware, Integration, and Testing" 
+						desc="Solace Power focuses on wireless power systems and has become an industry leader in wireless power technology. They work in various industries, including telecommunications, automotive, and defense. As a design, integration, and testing co-op, my duties include:<ul class='list-disc list-outside pl-3'><li>Designing, populating, testing, and debugging PCBs for wireless power transfer systems.</li><li>Designing LC filters to reduce noise in RF power circuits using Altium Designer and LTSpice.</li><li>Designed a current sense PCB that successfully provides overcurrent protection for systems. This PCB was tested in various configurations on the Micro100 system, ultimately leading to the most efficient design, shutting down power to the system in 13 microseconds. The system contains a current sense IC, sense resistor, OR gate, and a flip flop to latch the output.</li><li>Testing systems using oscilloscopes, EMI analyzers, vector network analyzers, and impedance analyzers, to improve system power efficiency and to reduce disturbances in these systems.</li><li>Assembling and modifying boards containing surface mount components using various soldering and assembly tools.</li></ul>" 
+						date="April 2024 - present"
+					>
+					</ExperienceCard>
+					<ExperienceCard 
+						link="https://www.solace.ca/" 
+						image={hydro} title="Newfoundland and Labrador Hydro - Protection, Controls, and Communications Electrical Co-op" 
+						desc="NL Hydro manages Newfoundland and Labrador's electricity system, generating and transmitting the vast majority of electricity used by people in the province every day. As a protection, controls, and communications co-op, I worked with the PCC team on the development of new generator-exciter systems. My duties included:<ul class='list-disc list-outside pl-3'><li>Designing, reviewing, and creating packages for generator excitation system upgrades. This included AC, DC, and exciter schematics, three-line diagrams, termination schedules, and protection and fault systems.</li><li>Supporting on-site construction and commissioning, creating as-built drawings for the new generator-exciter systems as modifications were made during construction.</li><li>Creating test plans for relays and faults on the completed systems. These plans successfully tested all precautions on the systems, ensuring all safety measures were met.</li>" 
+						date="Aug - Dec 2023"
+					>
+					</ExperienceCard>
+					<ExperienceCard 
+						link="https://www.solace.ca/" 
+						image={trainingworks} title="Training Works - Software and Project Development Co-op" 
+						desc="Training Works is a startup that specializes in creating the most up-to-date learning solutions to make the workforce safer, more productive, and future-ready. During my time there, I worked on the Ocean Supercluster Fatigue Risk Mitigation project, a project aimed at reducing safety risks for workers onboard vessels. My duties included:<ul class='list-disc list-outside pl-3'><li>Developing an app and online platform that links to a wireless armband for offshore workers to use. This system monitors workers' health during their shifts, alerting them of potential health risks.</li><li>Starting from the ground up, created the requirements for the project.</li><li>Tested the first release of the armband, platform, and app.</li><li>Storing, analyzing, and sharing data using Microsoft Visio, Power Automate, and Project.</li>" 
+						date="Jan - Apr 2023"
+					>
+					</ExperienceCard>
+					<ExperienceCard 
+						link="https://www.solace.ca/" 
+						image={cahill} title="Cahill Technical Services - Instrumentation and Controls Electrical Co-op" 
+						desc="CTS is an electrical, instrumentation & control engineering, and systems integration specialist. During my time at CTS, I worked on many programmable logic controller-based systems. My duties included:<ul class='list-disc list-outside pl-3'><li>Designing the layout, programming, and wiring of a system containing an Allen Bradley PLC for the Churchill Falls heating control.</li><li>Monitoring and exporting data for various systems, mainly sewage pumps and heating control, using VTSCADA.</li><li>Installing a PLC panel for a sewage pump, including wiring inputs and outputs, and programming the HMI.</li><li>Creating and interpreting drawings and circuit diagrams for PLC systems using AutoCAD.</li>" 
+						date="Jan - Apr 2023"
+					>
+					</ExperienceCard>
+					<ExperienceCard 
+						link="https://www.solace.ca/" 
+						image={verafin} title="Cahill Technical Services - Instrumentation and Controls Electrical Co-op" 
+						desc="Verafin is a fraud detection technology and anti-money laundering software company, focused on fighting financial crime. During my first summer at Verafin, my duties 	included:<ul class='list-disc list-outside pl-3'><li>Collecting and sorting data for Verafin's banking clients using Salesforce software and MS Excel.</li><li>Assisting the 	Anti Money Laundering team by collecting information for suspected fraudulent businesses.</li></ul>During my second summer, my duties included:<ul class='list-disc 	list-outside pl-3'><li>Learning to code using Python to help with development for the next generation of Verafin employees, and to assist with programming operations</li></	ul>" 
+						date="July - Aug 2019, July - Aug 2021"
+					>
 					</ExperienceCard>
 				</div>
 			</div>

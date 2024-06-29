@@ -16,7 +16,7 @@ import { Image } from 'astro:assets';
 	{image ? <Image height={512} src={image} alt="experience" /> : null}
 	<a href={link} class="text-blue-400 font-bold text-lg pt-2">{title}</a>
 	<div class="text-gray-400 text-sm">{date}</div>
-	<div>{desc}</div>
+	<div class="list-disc" set:html={desc}></div>
 	<div class="flex flex-wrap pt-2">
 		<slot />
 	</div>

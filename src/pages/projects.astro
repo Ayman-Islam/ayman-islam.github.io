@@ -1,21 +1,23 @@
 ---
 import { Image } from 'astro:assets';
-import NavBar from '../components/NavBar.astro';
+import NavBar from '../components/NavBar.jsx';
 import Footer from '../components/Footer.astro';
-import ExperienceCard from '../components/ExperienceCard.astro';
-import SkillTag from '../components/SkillTag.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 
-// import profile from '../content/profile.jpg';
-// import skillspass from '../content/skillspass.png';
-// import retrievium from '../content/retrievium.png';
-// import detechnologies from '../content/detechnologies.gif';
-// import fovp from '../content/fovp.png';
-// import baja from '../content/baja.png';
-// import copper from '../content/copper.png';
-// import paradigm from '../content/paradigm.png';
-// import munstar from '../content/munstar.png';
-import solace from '../content/solace.jpg';
-import CourseCard from '../components/CourseCard.astro';
+import power_distribution_board_1 from '../content/power_distribution_board_1.png';
+import power_distribution_board_2 from '../content/power_distribution_board_2.png';
+import power_distribution_board_3 from '../content/power_distribution_board_3.png';
+
+import adc_test_board_1 from '../content/adc_test_board_1.png';
+import adc_test_board_2 from '../content/adc_test_board_2.png';
+
+import drive_motor_supply_board_1 from '../content/drive_motor_supply_board_1.png';
+
+import inhibitor_circuit_1 from '../content/inhibitor_circuit_1.png';
+import inhibitor_circuit_2 from '../content/inhibitor_circuit_2.png';
+
+import fmuntenth_1 from '../content/fmuntenth_1.png';
+import fmuntenth_2 from '../content/fmuntenth_2.png';
 ---
 
 <html lang="en">
@@ -29,25 +31,60 @@ import CourseCard from '../components/CourseCard.astro';
 		<title>Ayman Islam</title>
 	</head>
 	<body class="bg-white">
-		<NavBar />
-		<div id="experience" class="flex justify-center bg-white">
+		<NavBar client:load />
+		<div id="home" class="flex items-center justify-center h-[20rem]">
+			<div class="max-w-[40rem] px-10">
+				<div class="text-6xl font-bold">
+					Projects
+				</div>
+			</div>
+		</div>
+		<div id="experience" class="flex justify-center bg-gray-300">
 			<div class="flex flex-col items-center pb-10">
-				<div class="text-2xl font-bold">Projects</div>
+				<div class="text-2xl font-bold pt-10 text-center">Paradigm Engineering - Team Lead & Electrical Designer</div>
 				<hr class="w-16 h-1 my-4 border-0 bg-gray-500">
-				<div class="grid md:grid-cols-2 gap-20 px-20 xl:px-[20%]">
-					<ExperienceCard image={solace} title="Solace Power - Hardware, Integration, and Testing" desc="I have experience in designing, populating, testing, and debugging PCBs for wireless power transfer systems. This includes creating LC filters to reduce RF noise using Altium Designer and LTSpice, and designing current sense PCBs for overcurrent protection. I use oscilloscopes, EMI analyzers, VNAs, and impedance analyzers to enhance system efficiency. My expertise ensures robust, efficient, and reliable systems, meeting high performance and safety standards through continuous testing and debugging." date="April 2024 - present">
-						<SkillTag skill="JavaScript"/>
-						<SkillTag skill="TypeScript"/>
-						<SkillTag skill="NodeJS"/>
-						<SkillTag skill="REST APIs"/>
-						<SkillTag skill="ReactJS"/>
-						<SkillTag skill="AngularJS"/>
-						<SkillTag skill="PostgreSQL"/>
-						<SkillTag skill="Unit-Testing"/>
-						<SkillTag skill="Jira"/>
-						<SkillTag skill="GitHub"/>
-						<SkillTag skill="Agile Development"/>
-					</ExperienceCard>
+				<div class="px-10 xl:px-[20%] text-center">Paradigm Engineering is the largest design and competition team at the Memorial University of Newfoundland. The team has competed at the SpaceX Hyperloop Pod Competitions, The Boring Company's "Not-a-Boring" competition, and the Intelligent Ground Vehicle competition. Paradigm is gearing up to compete in the Autonomous Karting Series in 2025, creating a fully autonomous, self-driving go-kart.</div>
+				<div class="grid md:grid-cols-1 gap-20 px-20 xl:px-[10%]">
+					<ProjectCard
+						images={[power_distribution_board_1, power_distribution_board_2, power_distribution_board_3]}
+						title="Power Distribution Board"
+						desc="This board is used to safely and efficiently distribute power from the battery to our auxiliary components. The design includes:<ul class='list-disc list-outside pl-3'><li>A hot-swap IC to safely connect and remove the battery connection. The IC is connected to a sense resistor for overcurrent protection, a voltage divider for under-voltage protection, and a switch to toggle the system.</li><li>A 48 to 12-volt buck converter is used as certain components require a 12V input. This specific buck was chosen for efficiency purposes, looking at current draw and power consumption.</li><li>Output connectors. Each connector is connected to a fuse for current protection, and a flyback diode to protect inductive loads from high voltage spikes.</li>" 
+					>
+					</ProjectCard>
+					<ProjectCard
+						images={[adc_test_board_1, adc_test_board_2]}
+						title="ADC Test Board"
+						desc="This board is used to test the functionality of the actuator braking system we plan to implement into our next design. This board allows us to test these systems without consuming power and space on our main boards. The board contains:<ul class='list-disc list-outside pl-3'><li>An H-Bridge to easily change the direction of actuator movement.</li><li>An ADC chip is used to convert analog voltage signals into digital signals. This allows the onboard computer to receive feedback from the actuator potentiometer to see the position of the actuator, and voltage from the battery.</li><li>A 12 to 5-volt linear regulator, as the chips require a 5V input.</li><li>Various filters, to test which filter is the most useful for our system.</li><li>A voltage follower, to provide a low resistance path for optimal reading efficiency for the ADC.</li>" 
+					>
+					</ProjectCard>
+					<ProjectCard
+						images={[drive_motor_supply_board_1]}
+						title="Drive Motor Supply Board"
+						desc="This board is used to safely and efficiently supply power from the battery to our drive motor. The design includes:<ul class='list-disc list-outside pl-3'><li>A hot-swap IC to safely connect and remove the battery connection. The IC is connected to a sense resistor for overcurrent protection, a voltage divider for under-voltage protection, and a switch to toggle the system.</li><li>An output connector, connected to a fuse for current protection, and a flyback diode to protect the load from high voltage spikes.</li>" 
+					>
+					</ProjectCard>
+				</div>
+				<div class="text-2xl font-bold pt-10 text-center">MUNStar-1 - Electrical Power System Designer</div>
+				<hr class="w-16 h-1 my-4 border-0 bg-gray-500">
+				<div class="px-10 xl:px-[20%] text-center">MUNStar-1 is a student design team based out of the Memorial University of Newfoundland. Its aim is to create a small satellite, called a CubeSat through the Canadian Space Agency's “CUBICS” Mission. The power subsystem supplies essential DC power to key components. The system includes a timer circuit PCB for a thirty-minute power-off period post-launch, called the inhibitor circuit</div>
+				<div class="grid md:grid-cols-1 gap-20 px-20 xl:px-[10%]">
+					<ProjectCard
+						images={[inhibitor_circuit_1, inhibitor_circuit_2]}
+						title="Inhibitor Circuit"
+						desc="The inhibitor PCB delays the  CubeSat power-up for the first 30 minutes postlaunch, supplying DC power to all other subsystems after the 30 minutes. The circuit includes:<ul class='list-disc list-outside pl-3'><li>A 555 timer connected to a counter chip. Setting the timer for 30 minutes is not possible, so a small amount of time is used to increment a counter. The inhibitor deactivates once this counter has counted 1920 times, at 1455ms per count.</li><li>A logic circuit containing an AND gate, flip flop, and photorelay. The 4-input AND gate is set high once the counter reaches 1920. The flip flop is used to latch this high output from the AND. The gate of the photorelay is driven by this latch, providing power to the rest of the CubeSat.</li><li>A 5-volt linear regulator to allow input voltage to be used to power components on the board.</li>" 
+					>
+					</ProjectCard>
+				</div>
+				<div class="text-2xl font-bold pt-10 text-center">F-MUN-TENTH - Electrical Team Member</div>
+				<hr class="w-16 h-1 my-4 border-0 bg-gray-500">
+				<div class="px-10 xl:px-[20%] text-center">Created an autonomous racing vehicle to compete in the F1 Tenth competition. Placed top 10 in May 2023 in San Antonio, Texas.</div>
+				<div class="grid md:grid-cols-1 gap-20 px-20 xl:px-[10%]">
+					<ProjectCard
+						images={[fmuntenth_1, fmuntenth_2]}
+						title="Work Included"
+						desc="<ul class='list-disc list-outside pl-3'><li>Soldered PCBs and wired various components.</li><li>Configured a system containing a LiDAR, motor controller, and NVIDIA Jetson GPU.</li>" 
+					>
+					</ProjectCard>
 				</div>
 			</div>
 		</div>

@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import NavBar from '../components/NavBar.astro';
+import NavBar from '../components/NavBar.jsx';
 import Footer from '../components/Footer.astro';
 
 import dan from '../content/dan.jpg';
@@ -17,7 +17,7 @@ import dan from '../content/dan.jpg';
 		<title>Ayman Islam</title>
 	</head>
 	<body class="bg-white">
-		<NavBar />
+		<NavBar client:load />
 		 	<Image src={dan} alt="dan" class="w-screen"/>
 		<Footer />	
 	</body>
