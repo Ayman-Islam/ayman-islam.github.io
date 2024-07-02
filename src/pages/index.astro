@@ -5,10 +5,12 @@ import Footer from '../components/Footer.astro';
 import ExperienceCard from '../components/ExperienceCard.astro';
 
 import solace from '../content/solace.png';
-import hydro from '../content/hydro.jpg';
+import hydro from '../content/hydro.png';
 import trainingworks from '../content/trainingworks.png';
 import cahill from '../content/cahill.jpg';
 import verafin from '../content/verafin.png';
+import paradigm from '../content/paradigm.png';
+import munstar from '../content/munstar-1.png';
 ---
 
 <html lang="en">
@@ -47,10 +49,15 @@ import verafin from '../content/verafin.png';
 					<div class="text-blue-600 font-bold md:text-lg text-md">Bachelor of Engineering - Electrical Engineering</div>
 					<div class="text-blue-600 font-bold md:text-sm text-xs">GPA: 3.8/4.0</div>
 					<ul class="list-disc list-inside font-bold md:text-md text-sm">
-						<li>Academic Term 6 Student</li>
+						<li>Senior Electrical Engineering Student, Expected graduation April 2026</li>
 						<li>Team Lead & Electrical Designer for Paradigm Engineering</li>
 						<li>Power Subteam Member for MUNStar-1</li>
 						<li>Student Advisor for Memorial University Student Design Hub</li>
+						<li>J.M.C. Facey Engineering Scholarship</li>
+						<li>NL Electoral District Scholarship</li>
+						<li>Gov. of NL Research Inspired Student Enrichment (RISE) Award</li>
+						<li>Entrance scholarships from the University of Waterloo, Queens University, and MUN</li>
+						<li>Feildians Provincial Soccer team, 2015 - Present</li>
 					</ul>
 				</div>
 			</div>
@@ -64,7 +71,21 @@ import verafin from '../content/verafin.png';
 						link="https://www.solace.ca/" 
 						image={solace} title="Solace Power - Hardware, Integration, and Testing" 
 						desc="Solace Power focuses on wireless power systems and has become an industry leader in wireless power technology. They work in various industries, including telecommunications, automotive, and defense. As a design, integration, and testing co-op, my duties include:<ul class='list-disc list-outside pl-3'><li>Designing, populating, testing, and debugging PCBs for wireless power transfer systems.</li><li>Designing LC filters to reduce noise in RF power circuits using Altium Designer and LTSpice.</li><li>Designed a current sense PCB that successfully provides overcurrent protection for systems. This PCB was tested in various configurations on the Micro100 system, ultimately leading to the most efficient design, shutting down power to the system in 13 microseconds. The system contains a current sense IC, sense resistor, OR gate, and a flip flop to latch the output.</li><li>Testing systems using oscilloscopes, EMI analyzers, vector network analyzers, and impedance analyzers, to improve system power efficiency and to reduce disturbances in these systems.</li><li>Assembling and modifying boards containing surface mount components using various soldering and assembly tools.</li></ul>" 
-						date="April 2024 - present"
+						date="Apr 2024 - present"
+					>
+					</ExperienceCard>
+					<ExperienceCard 
+						link="https://munparadigm.com/" 
+						image={paradigm} title="Paradigm Engineering - Team Lead & Electrical Designer" 
+						desc="Paradigm Engineering is the largest design and competition team at the Memorial University of Newfoundland. The team has competed at the SpaceX Hyperloop Pod Competitions, The Boring Company's 'Not-a-Boring' competition, and the Intelligent Ground Vehicle competition. Paradigm is gearing up to compete in the Autonomous Karting Series in 2025, creating a fully autonomous, self-driving go-kart:<ul class='list-disc list-outside pl-3'><li>Designed a PCB to safely regulate and distribute power from a battery for the electrical system, and a control PCB allowing computers to communicate with mechanical components.</li><li>Designing a suitable racing system, sizing optimal components such as motors and batteries.</li><li>Conducting overall project management to maintain operational efficiency, guiding mechanical,electrical, software, and business sub-teams, optimizing team member utilization and maintaining a well-organized project timeline.</li><li>Principal liaison with sponsors and other stakeholders, raising over $40,000.</li></ul>" 
+						date="Jan 2023 - present"
+					>
+					</ExperienceCard>
+					<ExperienceCard 
+						link="https://munstar-1.com/" 
+						image={munstar} title="MUNStar-1 - Electrical Power System Designer" 
+						desc="MUNStar-1 is a student design team based out of the Memorial University of Newfoundland. Its aim is to create a small satellite, called a CubeSat through the Canadian Space Agency's “CUBICS” Mission. The power subsystem supplies essential DC power to key components. The system includes a timer circuit PCB for a thirty-minute power-off period post-launch, called the inhibitor circuit:<ul class='list-disc list-outside pl-3'><li>Developed an inhibitor PCB to delay CubeSat power-up for the first 30 minutes post-launch, supplying DC power to all other subsystems after the 30 minutes</li><li>Researched optimal power supply options to work with existing systems on the teams satellite.</ul>"
+						date="Jan 2023 - present"
 					>
 					</ExperienceCard>
 					<ExperienceCard 
@@ -90,7 +111,7 @@ import verafin from '../content/verafin.png';
 					</ExperienceCard>
 					<ExperienceCard 
 						link="https://verafin.com/" 
-						image={verafin} title="Cahill Technical Services - Instrumentation and Controls Electrical Co-op" 
+						image={verafin} title="Verafin - Summer Internships" 
 						desc="Verafin is a fraud detection technology and anti-money laundering software company, focused on fighting financial crime. During my first summer at Verafin, my duties 	included:<ul class='list-disc list-outside pl-3'><li>Collecting and sorting data for Verafin's banking clients using Salesforce software and MS Excel.</li><li>Assisting the 	Anti Money Laundering team by collecting information for suspected fraudulent businesses.</li></ul>During my second summer, my duties included:<ul class='list-disc 	list-outside pl-3'><li>Learning to code using Python to help with development for the next generation of Verafin employees, and to assist with programming operations</li></	ul>" 
 						date="July - Aug 2019, July - Aug 2021"
 					>
