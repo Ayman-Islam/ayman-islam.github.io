@@ -21,6 +21,9 @@ import drive_motor_supply_board_3 from '../content/drive_motor_supply_board_3.pn
 
 import inhibitor_circuit_1 from '../content/inhibitor_circuit_1.png';
 import inhibitor_circuit_2 from '../content/inhibitor_circuit_2.png';
+import inhibitor_circuit_3 from '../content/inhibitor_circuit_3.png';
+import inhibitor_circuit_4 from '../content/inhibitor_circuit_4.png';
+import inhibitor_circuit_5 from '../content/inhibitor_circuit_5.png';
 
 import fmuntenth_1 from '../content/fmuntenth_1.png';
 import fmuntenth_2 from '../content/fmuntenth_2.png';
@@ -82,8 +85,14 @@ import fmuntenth_2 from '../content/fmuntenth_2.png';
 				<div class="grid md:grid-cols-1 gap-20 px-20 xl:px-[10%]">
 					<ProjectCard
 						images={[inhibitor_circuit_1, inhibitor_circuit_2]}
-						title="Inhibitor Circuit"
-						desc="The inhibitor PCB delays the  CubeSat power-up for the first 30 minutes postlaunch, supplying DC power to all other subsystems after the 30 minutes. The circuit includes:<ul class='list-disc list-outside pl-3'><li>A 555 timer connected to a counter chip. Setting the timer for 30 minutes is not possible, so a small amount of time is used to increment a counter. The inhibitor deactivates once this counter has counted 1920 times, at 1455ms per count.</li><li>A logic circuit containing an AND gate, flip flop, and photorelay. The 4-input AND gate is set high once the counter reaches 1920. The flip flop is used to latch this high output from the AND. The gate of the photorelay is driven by this latch, providing power to the rest of the CubeSat.</li><li>A 5-volt linear regulator to allow input voltage to be used to power components on the board.</li>" 
+						title="Inhibitor Circuit Rev 0"
+						desc="The inhibitor PCB delays the  CubeSat power-up for the first 30 minutes postlaunch, supplying DC power to all other subsystems after the 30 minutes. The circuit includes:<ul class='list-disc list-outside pl-3'><li>A 555 timer connected to a counter chip. Setting the timer for 30 minutes is not possible, so a small amount of time is used to increment a counter. The inhibitor deactivates once this counter has counted 1920 times, at 1455ms per count.</li><li>A logic circuit containing an AND gate, flip flop, and photorelay. The 4-input AND gate is set high once the counter reaches 1920. The flip flop is used to latch this high output from the AND. The gate of the photorelay is driven by this latch, providing power to the rest of the CubeSat.</li><li>A 5V linear regulator allows input voltage to be used to power components on the board.</li><li>All components are temperature-rated and vibration-tested for use in space.</li></ul>" 
+					>
+					</ProjectCard>
+					<ProjectCard
+						images={[inhibitor_circuit_3, inhibitor_circuit_4, inhibitor_circuit_5]}
+						title="Inhibitor Circuit Rev 1"
+						desc="<ul class='list-disc list-outside pl-3'><li>A programmable timer chip replaces the 555 and logic circuitry, simplifying the design. This timer is programmed using external resistors and holds the output high after the desired time has elapsed.</li><li>A 5V linear regulator.</li><li>A photorelay for fast switching once the timer outputs the signal.</li><li>A jumper header that switches the timer from 30 minutes to 30 seconds, making the system available for quick testing.</li><li>All components are temperature-rated and vibration-tested for use in space.</li></ul>" 
 					>
 					</ProjectCard>
 				</div>
@@ -103,6 +112,3 @@ import fmuntenth_2 from '../content/fmuntenth_2.png';
 		<Footer />	
 	</body>
 </html>
-
-
-This board is used for testing the functionality of the ESP32 used on the vehicle, which includes the programming of the ESP, and the ability to measure the outputs of the pins. This also allows us to move away from using the ESP32 development kits, giving us freedom in what we include in our design. The board contains:<ul class='list-disc list-outside pl-3'><li>A USB to UART bridge, with a USB connector as the input. This allows the ESP to use the code written on the USB-connected laptop via UART.</li><li>The ESP32 microcontroller, which will be used to control the motors on the vehicle.</li><li>A 3V3 linear regulator, providing power to the ESP and ICs on the board.</li><li>An op-amp to boost the ESP output, as some motor function, requires a voltage higher than the 3V3 output.</li><li>A voltage translator is used to raise 3V3 voltage to 5V directly.</li><li>A through-hole header that allows all outputs to connect to an external breadboard for easy testing and use.</li></ul>
