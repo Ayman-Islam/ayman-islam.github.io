@@ -4,6 +4,10 @@ import NavBar from '../components/NavBar.jsx';
 import Footer from '../components/Footer.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 
+import switch_test_board_1 from '../content/switch_test_board_1.png';
+import switch_test_board_2 from '../content/switch_test_board_2.jpg';
+import switch_test_board_3 from '../content/switch_test_board_3.jpg';
+
 import esp_board_1 from '../content/esp_board_1.png';
 import esp_board_2 from '../content/esp_board_2.png';
 import esp_board_3 from '../content/esp_board_3.png';
@@ -50,10 +54,32 @@ import fmuntenth_2 from '../content/fmuntenth_2.png';
 		</div>
 		<div id="experience" class="flex justify-center bg-gray-300">
 			<div class="flex flex-col items-center pb-10">
+				<div class="text-2xl font-bold pt-10 text-center">Blue Robotics - Electronics Design Co-Op</div>
+				<hr class="w-16 h-1 my-4 border-0 bg-gray-500">
+				<div class="px-10 xl:px-[20%] text-center">My main project as a co-op at Blue Robotics was to improve the speeds of the tethered communications used for the ROVs. This involves implementing G.hn technology into the PCBs in the ROVs, allowing for Gigabit, 100Base-T and 10Base-T communication with connected devices. This project involved the design of multiple boards.</div>
+				<div class="grid md:grid-cols-1 gap-20 px-20 xl:px-[10%]">
+					<ProjectCard
+						title="The Gigaboard"
+						desc="This is the main board used in the ROVs. This board was a very intricate six-layer project, which bridges G.hn data over the tether to multiple Ethernet PHYs using multiple forms of MII connections and multiple Ethernet switch controllers. The board also acts as a flight controller, complete with all necessary signals and connections, along with an STM32H5. The design includes:<ul class='list-disc list-outside pl-3'><li>A G.hn processor, which connected to the tether. This processor is connected to two analog front-end chips which modulates the digital data from the processor into analog data, and demodulates the analog data received back to digital data for the processor to read. This subcircuit has impedance matched traces and Ethernet magnetics for protection.</li><li>A Gigabit Ethernet PHY interfaced to the G.hn processor via RGMII and to an Ethernet switch via a Gigabit connection. This PHY provides the physical layer interface between the processor and switch that allows them to communicate.</li><li>Two Ethernet Switch Controllers. These allow the user to interface a device to the ROV with a Gigabit or 100Base-T Ethernet connection via an RJ45 or wire-to-board connectors. These switches are also interfaced to three 10Base-T PHYs and an STM32H5 via MII. These subcircuits have impedance matched differential pair traces and Ethernet magnetics.</li><li>Three 10Base-T PHYs, allowing the user to interface a device to the ROV with a 10Base-T Ethernet connection. These subcircuits are complete with ESD protection.</li><li>An STM32H5 microcontroller, interfaced with an Ethernet Switch via MII to establish Ethernet connection between the two. The MCU is also utilizes four SPI and two I2C buses, a USART bus for programming, four ADCs, and is connected to many more peripherals.</li><li>Four buck converters and an LDO, along with reverse polarity protection.</li><li>For flight controller capabilities, the board contains:<ul class='list-disc list-outside pl-3'><li>Eight PWM outputs connected to the MCU.</li><li>An IMU connected over SPI. Two magnetometers, one over SPI and one over I2C.</li><li>Current and voltage sense, connected to the ADCs of the MCU.</li><li>Two leak sensor connections, an external fan connection, external voltage and power switch connections, along with an extra ADC and I2C connection.</li></ul></li></ul>" 
+					>
+					</ProjectCard>
+					<ProjectCard
+						images={[switch_test_board_1, switch_test_board_2, switch_test_board_3]}
+						title="Switch Testing Board"
+						desc="<ul class='list-disc list-outside pl-3'><li>This board was used to test the interfacing of G.hn from the tether to the ROV. The design includes:</li><li>An Ethernet Switch Controller. This was the main chip being tested, seeing if devices could be interfaced with a Gigabit or 100Base-T Ethernet connection through a G.hn interface. This chip has impedance matched differential pair traces and Ethernet magnetics.</li><li>A 10Base-T PHY connected to the Switch, testing if a 10Base-T connection could be established through a G.hn interface.</li><li>External connectors for I2C and SPI access to the Switch.</li><li>24 pin connectors to test Switch-to-Switch communication between two boards.</li></ul>" 
+					>
+					</ProjectCard>
+				</div>
 				<div class="text-2xl font-bold pt-10 text-center">Paradigm Engineering - Team Lead & Electrical Designer</div>
 				<hr class="w-16 h-1 my-4 border-0 bg-gray-500">
 				<div class="px-10 xl:px-[20%] text-center">Paradigm Engineering is the largest design and competition team at the Memorial University of Newfoundland. The team has competed at the SpaceX Hyperloop Pod Competitions, The Boring Company's "Not-a-Boring" competition, and the Intelligent Ground Vehicle competition. Paradigm is gearing up to compete in the Autonomous Karting Series in 2025, creating a fully autonomous, self-driving go-kart.</div>
 				<div class="grid md:grid-cols-1 gap-20 px-20 xl:px-[10%]">
+					<ProjectCard
+						images={[esp_board_1, esp_board_2, esp_board_3]}
+						title="ESP Proof of Concept Board"
+						desc="This board is used for testing the functionality of the ESP32 used on the vehicle, which includes the programming of the ESP, and the ability to measure the outputs of the pins. This also allows us to move away from using the ESP32 development kits, giving us freedom in what we include in our design. The board contains:<ul class='list-disc list-outside pl-3'><li>A USB to UART bridge, with a USB connector as the input. This allows the ESP to use the code written on the USB-connected laptop via UART.</li><li>The ESP32 microcontroller, which will be used to control the motors on the vehicle.</li><li>A 3V3 linear regulator, providing power to the ESP and ICs on the board.</li><li>An op-amp to boost the ESP output, as some motor function, requires a voltage higher than the 3V3 output.</li><li>A voltage translator is used to raise 3V3 voltage to 5V directly.</li><li>A through-hole header that allows all outputs to connect to an external breadboard for easy testing and use.</li></ul>" 
+					>
+					</ProjectCard>
 					<ProjectCard
 						images={[esp_board_1, esp_board_2, esp_board_3]}
 						title="ESP Proof of Concept Board"
