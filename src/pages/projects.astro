@@ -38,6 +38,7 @@ import gigaboard_layout from '../content/gigaboard_layout.png';
 
 import control_front from '../content/control_front.png';
 import control_pcb from '../content/control_pcb.png';
+import control_board from '../content/control_board.png';
 ---
 
 <html lang="en">
@@ -83,31 +84,25 @@ import control_pcb from '../content/control_pcb.png';
 				<div class="px-10 xl:px-[20%] text-center">Paradigm Engineering is the largest design and competition team at the Memorial University of Newfoundland. The team has competed at the SpaceX Hyperloop Pod Competitions, The Boring Company's "Not-a-Boring" competition, and the Intelligent Ground Vehicle competition. Paradigm is gearing up to compete in the Autonomous Karting Series in 2025, creating a fully autonomous, self-driving go-kart.</div>
 				<div class="grid md:grid-cols-1 gap-20 px-20 xl:px-[10%]">
 					<ProjectCard
-						images={[control_front, control_pcb]}
+						images={[control_board, control_pcb]}
 						title="Control Board"
 						desc="This board interfaces a Pixhawk flight controller to an ESP32 for autonomous motor control. The design includes:<ul class='list-disc list-outside pl-3'><li>An ESP32 microcontroller, which processes signals from the Pixhawk flight controller to generate PWM and output signals for motor control. The ESP32 communicates with the Pixhawk via UART and directly drives motor control circuits.</li><li>A USB-to-UART bridge, enabling firmware programming and communication with the ESP32 from a USB-connected laptop. This subcircuit ensures seamless debugging and software updates.</li><li>A bidirectional logic level shifter, converting the ESP32's 3.3V PWM signals to 5V for compatibility with motors requiring 5V input. This ensures reliable signal transmission between the MCU and motor drivers.</li><li>Two USB connectors:<ul class='list-disc list-outside pl-3'><li>One connected to the USB-to-UART bridge for programming and communication.</li><li>One directly interfaced with the ESP32 for standalone connectivity.</li></ul></li><li>Power management circuitry:<ul class='list-disc list-outside pl-3'><li>A 48V to 12V buck converter for stepping down the main battery voltage.</li><li>A 12V to 5V linear regulator, followed by a 5V to 3.3V LDO, providing clean power to the ESP32 and peripherals.</li></ul></li><li>A hot-swap controller with integrated safety features:<ul class='list-disc list-outside pl-3'><li>Overcurrent protection via a sense resistor.</li><li>Undervoltage lockout using a voltage divider network.</li><li>A toggle switch for manual system power control.</li></ul></li><li>Motor output interfaces:<ul class='list-disc list-outside pl-3'><li>Two motor channels with fuses for overcurrent protection.</li><li>Flyback diodes across each motor output to suppress voltage spikes from inductive loads.</li><li>A barrel jack connector to power an NVIDIA Jetson device from the 12V rail.</li></ul></li></ul>"
 					>
 					</ProjectCard>
 					<ProjectCard
-						images={[power_distribution_board_1, power_distribution_board_2, power_distribution_board_3]}
+						images={[power_distribution_board_1, power_distribution_board_2]}
 						title="Power Distribution Board"
 						desc="This board is used to safely and efficiently distribute power from the battery to our auxiliary components. The design includes:<ul class='list-disc list-outside pl-3'><li>A hot-swap IC to safely connect and remove the battery connection. The IC is connected to a sense resistor for overcurrent protection, a voltage divider for under-voltage protection, and a switch to toggle the system.</li><li>A 48 to 12-volt buck converter is used as certain components require a 12V input. This specific buck was chosen for efficiency purposes, looking at current draw and power consumption.</li><li>Output connectors. Each connector is connected to a fuse for current protection, and a flyback diode to protect inductive loads from high voltage spikes.</li>" 
 					>
 					</ProjectCard>
 					<ProjectCard
-						images={[esp_board_1, esp_board_2, esp_board_3]}
+						images={[esp_board_1, esp_board_2]}
 						title="ESP Proof of Concept Board"
 						desc="This board is used for testing the functionality of the ESP32 used on the vehicle, which includes the programming of the ESP, and the ability to measure the outputs of the pins. This also allows us to move away from using the ESP32 development kits, giving us freedom in what we include in our design. The board contains:<ul class='list-disc list-outside pl-3'><li>A USB to UART bridge, with a USB connector as the input. This allows the ESP to use the code written on the USB-connected laptop via UART.</li><li>The ESP32 microcontroller, which will be used to control the motors on the vehicle.</li><li>A 3V3 linear regulator, providing power to the ESP and ICs on the board.</li><li>An op-amp to boost the ESP output, as some motor function, requires a voltage higher than the 3V3 output.</li><li>A voltage translator is used to raise 3V3 voltage to 5V directly.</li><li>A through-hole header that allows all outputs to connect to an external breadboard for easy testing and use.</li></ul>" 
 					>
 					</ProjectCard>
 					<ProjectCard
-						images={[adc_test_board_1, adc_test_board_2]}
-						title="ADC Test Board"
-						desc="This board is used to test the functionality of the actuator braking system we plan to implement into our next design. This board allows us to test these systems without consuming power and space on our main boards. The board contains:<ul class='list-disc list-outside pl-3'><li>An H-Bridge to easily change the direction of actuator movement.</li><li>An ADC chip is used to convert analog voltage signals into digital signals. This allows the onboard computer to receive feedback from the actuator potentiometer to see the position of the actuator, and voltage from the battery.</li><li>A 12 to 5-volt linear regulator, as the chips require a 5V input.</li><li>Various filters, to test which filter is the most useful for our system.</li><li>A voltage follower, to provide a low resistance path for optimal reading efficiency for the ADC.</li>" 
-					>
-					</ProjectCard>
-					<ProjectCard
-						images={[drive_motor_supply_board_1, drive_motor_supply_board_2, drive_motor_supply_board_3]}
+						images={[drive_motor_supply_board_1, drive_motor_supply_board_2]}
 						title="Drive Motor Supply Board"
 						desc="This board is used to safely and efficiently supply power from the battery to our drive motor. The design includes:<ul class='list-disc list-outside pl-3'><li>A hot-swap IC to safely connect and remove the battery connection. The IC is connected to a sense resistor for overcurrent protection, a voltage divider for under-voltage protection, and a switch to toggle the system.</li><li>An output connector, connected to a fuse for current protection, and a flyback diode to protect the load from high voltage spikes.</li>" 
 					>
@@ -118,15 +113,9 @@ import control_pcb from '../content/control_pcb.png';
 				<div class="px-10 xl:px-[20%] text-center">MUNStar-1 is a student design team based out of the Memorial University of Newfoundland. Its aim is to create a small satellite, called a CubeSat through the Canadian Space Agency's “CUBICS” Mission. The power subsystem supplies essential DC power to key components. The system includes a timer circuit PCB for a thirty-minute power-off period post-launch, called the inhibitor circuit</div>
 				<div class="grid md:grid-cols-1 gap-20 px-20 xl:px-[10%]">
 					<ProjectCard
-						images={[inhibitor_circuit_1, inhibitor_circuit_2]}
-						title="Inhibitor Circuit Rev 0"
-						desc="The inhibitor PCB delays the  CubeSat power-up for the first 30 minutes postlaunch, supplying DC power to all other subsystems after the 30 minutes. The circuit includes:<ul class='list-disc list-outside pl-3'><li>A 555 timer connected to a counter chip. Setting the timer for 30 minutes is not possible, so a small amount of time is used to increment a counter. The inhibitor deactivates once this counter has counted 1920 times, at 1455ms per count.</li><li>A logic circuit containing an AND gate, flip flop, and photorelay. The 4-input AND gate is set high once the counter reaches 1920. The flip flop is used to latch this high output from the AND. The gate of the photorelay is driven by this latch, providing power to the rest of the CubeSat.</li><li>A 5V linear regulator allows input voltage to be used to power components on the board.</li><li>All components are temperature-rated and vibration-tested for use in space.</li></ul>" 
-					>
-					</ProjectCard>
-					<ProjectCard
-						images={[inhibitor_circuit_3, inhibitor_circuit_4, inhibitor_circuit_5]}
-						title="Inhibitor Circuit Rev 1"
-						desc="<ul class='list-disc list-outside pl-3'><li>A programmable timer chip replaces the 555 and logic circuitry, simplifying the design. This timer is programmed using external resistors and holds the output high after the desired time has elapsed.</li><li>A 5V linear regulator.</li><li>A photorelay for fast switching once the timer outputs the signal.</li><li>A jumper header that switches the timer from 30 minutes to 30 seconds, making the system available for quick testing.</li><li>All components are temperature-rated and vibration-tested for use in space.</li></ul>" 
+						images={[inhibitor_circuit_3, inhibitor_circuit_4]}
+						title="Inhibitor Circuit"
+						desc="A programmable timer chip, programmed using external resistors. Provides simplicity compared to using a 555 timer and logic circuitry:<ul class='list-disc list-outside pl-3'><li>A 5V linear regulator.</li><li>A photorelay for fast switching once the timer outputs the signal.</li><li>A jumper header that switches the timer from 30 minutes to 30 seconds, making the system available for quick testing.</li><li>All components are temperature-rated and vibration-tested for use in space.</li></ul>" 
 					>
 					</ProjectCard>
 				</div>

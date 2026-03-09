@@ -4,6 +4,7 @@ import NavBar from '../components/NavBar.jsx';
 import Footer from '../components/Footer.astro';
 import ExperienceCard from '../components/ExperienceCard.astro';
 
+import figure from '../content/figure.png';
 import bluerobotics from '../content/bluerobotics.png';
 import solace from '../content/solace.png';
 import hydro from '../content/hydro.png';
@@ -12,7 +13,7 @@ import cahill from '../content/cahill.jpg';
 import verafin from '../content/verafin.png';
 import paradigm from '../content/paradigm.png';
 import munstar from '../content/munstar-1.png';
-import profile from '../content/profile.jpg';
+import profile from '../content/profile.png';
 ---
 
 <html lang="en">
@@ -33,32 +34,26 @@ import profile from '../content/profile.jpg';
 					Ayman Islam
 				</div>
 				<div class="text-blue-600 text-3xl font-bold">
-					Electrical Engineering Student
-				</div>
-				<div>
-					I am a senior electrical engineering student attending the Memorial University of Newfoundland, expecting to graduate in May 2026. I have a strong interest in electronics, robotics, and PCB design. I develop electronics for various student projects, personal projects, and through my professional work. 
+					Electronics Engineer
 				</div>
 			</div>
 		</div>
-		<div id="who" class="flex justify-center bg-gray-300">
 			<div class="flex flex-col items-center py-10">
-				<div class="text-2xl font-bold">Who Am I?</div>
-				<hr class="w-16 h-1 my-4 border-0 bg-gray-700">
 				<div class="relative mx-auto rounded-lg overflow-hidden">
 					<Image height={256} src={profile} alt="Profile" />
 				</div>
 				<div class="pt-4 px-5">
-					<div class="text-blue-600 font-bold md:text-lg text-md">Bachelor of Engineering - Electrical Engineering</div>
-					<div class="text-blue-600 font-bold md:text-sm text-xs">GPA: 3.8/4.0</div>
 					<ul class="list-disc list-inside font-bold md:text-md text-sm">
-						<li>Senior Electrical Engineering Student, Expected graduation April 2026</li>
-						<li>Team Lead & Electrical Designer for Paradigm Engineering</li>
-						<li>Power Subteam Member for MUNStar-1</li>
-						<li>Student Advisor for Memorial University Student Design Hub</li>
+						<li>Electrical Engineer with a focus on electronics and robotics</li>
+						<li>Previous EE intern at Figure AI, Blue Robotics, and Solace Power</li>
+						<li>Former Team Lead & Electrical Designer for Paradigm Engineering</li>
+						<li>Co-founder of MUN’s Socratica node, 10am@MUN</li>
+						<li>Bachelor of Engineering - Electrical Engineering from Memorial University of Newfoundland, 3.8/4.0 GPA. Class of 2026</li>
+						<li>Dean's List Recipient</li>
+						<li>MUN Student Design Hub Board Member</li>
 						<li>J.M.C. Facey Engineering Scholarship</li>
 						<li>NL Electoral District Scholarship</li>
 						<li>Gov. of NL Research Inspired Student Enrichment (RISE) Award</li>
-						<li>Entrance scholarships from the University of Waterloo, Queens University, and MUN</li>
 						<li>Feildians Provincial Soccer team, 2015 - Present</li>
 					</ul>
 				</div>
@@ -69,6 +64,13 @@ import profile from '../content/profile.jpg';
 				<div class="text-2xl font-bold">Experience</div>
 				<hr class="w-16 h-1 my-4 border-0 bg-gray-500">
 				<div class="grid md:grid-cols-2 gap-20 px-20 xl:px-[20%]">
+					<ExperienceCard
+						link="https://www.figure.ai/"
+						image={figure} title="Figure AI - Electrical Engineering Intern"
+						desc="Figure is a world leader in humanoid robot development, having released three iterations of their robot in just 3 years. As an intern at Figure, my duties included:<ul class='list-disc list-outside pl-3'><li>Designed PCBs for the robot’s hands. Includes FPC boards, rigid-flex boards, and very space-constrained boards.</li><li>Designed a 300W GaN FET synchronous buck using TI’s new LMG708B5 chip for the main robot controller. Extensively tested the buck by gathering Bode plots, efficiency maps, and transient responses.</li><li>Extensively tested, tuned, and validated wireless power charging. Includes efficiency mapping of all system stages, testing synchronous rectifier behaviour, and the bring-up of multiple versions of the wireless charging stands.</li><li>Designed boards for communicating with the robot through multiple interfaces, including Ethernet and RS422.</li></ul>"
+						date="Sunnyvale, CA, Sept - Dec 2025"
+					>
+					</ExperienceCard>	
 					<ExperienceCard 
 						link="https://bluerobotics.com/" 
 						image={bluerobotics} title="Blue Robotics - Electronics Design Co-Op" 
@@ -87,14 +89,14 @@ import profile from '../content/profile.jpg';
 						link="https://munparadigm.com/" 
 						image={paradigm} title="Paradigm Engineering - Team Lead & Electrical Designer" 
 						desc="Paradigm Engineering is the largest design and competition team at the Memorial University of Newfoundland. The team has competed at the SpaceX Hyperloop Pod Competitions, The Boring Company's 'Not-a-Boring' competition, and the Intelligent Ground Vehicle competition. Paradigm is gearing up to compete in the Autonomous Karting Series in 2025, creating a fully autonomous, self-driving go-kart:<ul class='list-disc list-outside pl-3'><li>Designed a PCB to safely regulate and distribute power from a battery for the electrical system, and a control PCB allowing computers to communicate with mechanical components.</li><li>Designing a suitable racing system, sizing optimal components such as motors and batteries.</li><li>Conducting overall project management to maintain operational efficiency, guiding mechanical,electrical, software, and business sub-teams, optimizing team member utilization and maintaining a well-organized project timeline.</li><li>Principal liaison with sponsors and other stakeholders, raising over $40,000.</li></ul>" 
-						date="Jan 2023 - present"
+						date="Jan 2023 - Dec 2025"
 					>
 					</ExperienceCard>
 					<ExperienceCard 
 						link="https://munstar-1.com/" 
 						image={munstar} title="MUNStar-1 - Electrical Power System Designer" 
 						desc="MUNStar-1 is a student design team based out of the Memorial University of Newfoundland. Its aim is to create a small satellite, called a CubeSat through the Canadian Space Agency's “CUBICS” Mission. The power subsystem supplies essential DC power to key components. The system includes a timer circuit PCB for a thirty-minute power-off period post-launch, called the inhibitor circuit:<ul class='list-disc list-outside pl-3'><li>Developed an inhibitor PCB to delay CubeSat power-up for the first 30 minutes post-launch, supplying DC power to all other subsystems after the 30 minutes</li><li>Researched optimal power supply options to work with existing systems on the teams satellite.</ul>"
-						date="Jan 2023 - present"
+						date="Jan 2023 - Dec 2025"
 					>
 					</ExperienceCard>
 					<ExperienceCard 
